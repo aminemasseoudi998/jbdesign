@@ -4,7 +4,7 @@ import { Palette, Home, Ruler, Brush, ArrowUpRight } from "lucide-react";
 
 const services = [
   { icon: Palette, title: "Interior Styling", num: "01" },
-  { icon: Home, title: "Full Renovation", num: "02" },
+  { icon: Home, title: "Art Consultation", num: "02" },
   { icon: Ruler, title: "Space Planning", num: "03" },
   { icon: Brush, title: "Art Curation", num: "04" },
 ];
