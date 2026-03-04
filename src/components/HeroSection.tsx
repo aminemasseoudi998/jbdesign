@@ -16,8 +16,9 @@ const HeroSection = () => {
   const scrollToPortfolio = () => {
     document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" });
   };
-  const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  
+  const openCalendly = () => {
+    window.open("https://calendly.com/judithbautista187/30min", "_blank");
   };
 
   return (
@@ -191,7 +192,7 @@ const HeroSection = () => {
           className="mt-14 flex flex-col sm:flex-row gap-5"
         >
           <motion.button
-            onClick={scrollToContact}
+            onClick={openCalendly}
             className="group relative px-10 py-4 overflow-hidden text-xs font-sans tracking-[0.2em] uppercase text-primary-foreground border border-primary-foreground/25 hover:border-transparent transition-all duration-600"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}

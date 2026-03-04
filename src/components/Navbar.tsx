@@ -17,6 +17,11 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
+  const openCalendly = () => {
+    window.open("https://calendly.com/judithbautista187/30min", "_blank");
+    setIsOpen(false);
+  };
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -68,7 +73,7 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.5 }}
-            onClick={() => scrollTo("contact")}
+            onClick={openCalendly}
             className="px-7 py-2.5 gold-gradient text-primary-foreground text-xs font-sans tracking-[0.2em] uppercase hover:shadow-[0_4px_20px_hsl(var(--gold)/0.4)] transition-all duration-500"
           >
             Free Consultation
@@ -111,7 +116,7 @@ const Navbar = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 }}
-                onClick={() => scrollTo("contact")}
+                onClick={openCalendly}
                 className="px-7 py-3 gold-gradient text-primary-foreground text-xs font-sans tracking-[0.2em] uppercase w-fit"
               >
                 Free Consultation

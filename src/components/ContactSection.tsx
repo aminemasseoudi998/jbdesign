@@ -7,6 +7,10 @@ const ContactSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [focused, setFocused] = useState<string | null>(null);
 
+  const openCalendly = () => {
+    window.open("https://calendly.com/judithbautista187/30min", "_blank");
+  };
+
   return (
     <section id="contact" className="py-32 px-6 lg:px-12 max-w-7xl mx-auto" ref={ref}>
       {/* Header */}
@@ -51,9 +55,9 @@ const ContactSection = () => {
 
           <div className="space-y-6">
             {[
-              { icon: Mail, text: "judithbautista187@gmail.com", href: "judithbautista187@gmail.com" },
-              { icon: Phone, text: "(519) 997‑4591", href: "(519) 997‑4591" },
-              { icon: MapPin, text: "Suite 704, 275 Erie Street East, Windsor, ON N9A 7C7, Canada  ", href: "#" },
+              { icon: Mail, text: "judithbautista187@gmail.com", href: "mailto:judithbautista187@gmail.com" },
+              { icon: Phone, text: "(519) 997‑4591", href: "tel:5199974591" },
+              { icon: MapPin, text: "Suite 704, 275 Erie Street East, Windsor, ON N9A 7C7, Canada", href: "#" },
             ].map((item, i) => (
               <motion.a
                 key={i}
@@ -77,20 +81,18 @@ const ContactSection = () => {
           </div>
 
           {/* Book consultation - prominent */}
-          <motion.a
-            href="https://calendly.com"
-            target="_blank"
-            rel="noopener noreferrer"
+          <motion.button
+            onClick={openCalendly}
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 1.2, duration: 0.7 }}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="group inline-flex items-center gap-4 px-10 py-5 gold-gradient text-primary-foreground text-xs font-sans tracking-[0.2em] uppercase hover:shadow-[0_10px_40px_hsl(var(--gold)/0.4)] transition-all duration-500"
+            className="group inline-flex items-center gap-4 px-10 py-5 gold-gradient text-primary-foreground text-xs font-sans tracking-[0.2em] uppercase hover:shadow-[0_10px_40px_hsl(var(--gold)/0.4)] transition-all duration-500 cursor-pointer"
           >
             <span>Book 20 Mins Free Design Consultation</span>
             <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
-          </motion.a>
+          </motion.button>
         </motion.div>
 
         {/* Right - Form */}
